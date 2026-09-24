@@ -1,6 +1,6 @@
 // Teste GitHub + Cloudflare
 const products = [
- {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS",image:"D_NQ_NP_2X_689062-MLA116547999226_092026-F.webp"},
+  {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS",images:["D_NQ_NP_2X_689062-MLA116547999226_092026-F.webp","simake2.webp","simake3.webp"]},
   {name:"Parafusadeira/Furadeira 20V — exemplo",cat:"moveis",price:249.90,emoji:"🔧",rating:"4,8",desc:"Mais autonomia e força para uso doméstico frequente.",details:["20V","Bateria","Mandril"]},
   {name:"Furadeira de Impacto 650W — exemplo",cat:"parede",price:219.90,emoji:"🧱",rating:"4,8",desc:"Opção versátil para instalações domésticas e furos em alvenaria.",details:["650W","Impacto","127/220V"]},
   {name:"Furadeira de Impacto 750W — exemplo",cat:"parede",price:329.90,emoji:"🧱",rating:"4,9",desc:"Mais potência para quem faz instalações com maior frequência.",details:["750W","Impacto","Mandril"]},
@@ -22,6 +22,17 @@ const categories = {
 let selectedCategory = null;
 let selectedBudget = null;
 let ascending = true;
+const galleryState = {};
+
+function changeImage(index, direction){
+  const state = galleryState[index];
+  const img = document.getElementById(product-img-${index});
+
+  if(!state || !img) return;
+
+  state.current = (state.current + direction + state.images.length) % state.images.length;
+  img.src = state.images[state.current];
+}
 
 const $ = id => document.getElementById(id);
 function money(v){return v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
@@ -73,18 +84,30 @@ function renderProducts(){
     return;
   }
 
-  $("products").innerHTML=list.map(p=>`
+  $("products").innerHTML=list.map((p,index)=>{
+  const images=p.images||[];
+  const firstImage=images[0];
+  galleryState[index]={images:images,current:0};
+
+  return `
     <article class="product">
-    <div class="product-image">${p.image ? `<img src="${p.image}" alt="${p.name}">` : p.emoji}</div>
+      <div class="product-image">
+        ${firstImage
+          ? `<button class="image-arrow left" onclick="changeImage(${index},-1)">‹</button>
+             <img id="product-img-${index}" src="${firstImage}" alt="${p.name}">
+             <button class="image-arrow right" onclick="changeImage(${index},1)">›</button>`
+          : p.emoji}
+      </div>
+
       <div class="product-body">
         <div class="product-cat">${categories[p.cat]||"Ferramenta"}</div>
         <h3>${p.name}</h3>
         <div class="stars">★ ${p.rating} · avaliações (exemplo)</div>
         <p class="desc">${p.desc}</p>
-        <div class="details">${p.details.map(d=>`<span class="pill">${d}</span>`).join("")}</div>
+        <div class="details">${p.details.map(d=><span class="pill">${d}</span>).join("")}</div>
         <div class="price">${money(p.price)}</div>
-      <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
+        <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
       </div>
     </article>
-  `).join("");
-}
+  `;
+}).join("");
