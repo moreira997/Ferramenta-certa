@@ -55,7 +55,7 @@ document.querySelectorAll(".category-card").forEach(btn=>{
 
 $("allFromCategory").onclick=()=>{selectedCategory="todas";selectedBudget=null;renderProducts();show("catalog")};
 $("backCategory").onclick=()=>show("category");
-$("backHome").onclick=()=>show("category");
+$("backHome").onclick=()=>show("budget");
 
 document.querySelectorAll(".budget-card").forEach(btn=>{
   btn.onclick=()=>{selectedBudget=Number(btn.dataset.budget);renderProducts();show("catalog")};
