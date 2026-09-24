@@ -8,8 +8,7 @@ const products = [
   {name:"Furadeira Profissional — exemplo",cat:"profissional",price:699.90,emoji:"🛠️",rating:"4,9",desc:"Construção mais robusta para uso frequente e profissional.",details:["Robusta","Uso intenso","Garantia"]},
   {name:"Kit de Ferramentas 100 peças — exemplo",cat:"todas",price:299.90,emoji:"🧰",rating:"4,7",desc:"Conjunto variado para manutenção e pequenos reparos.",details:["100 peças","Kit","Casa"]},
   {name:"Esmerilhadeira 4.1/2 — exemplo",cat:"reforma",price:379.90,emoji:"⚙️",rating:"4,8",desc:"Para cortes, desbaste e trabalhos de reforma.",details:["Potente","4.1/2","Reforma"]},
-  {name:"Trena 5m — exemplo",cat:"todas",price:39.90,emoji:"📏",rating:"4,8",desc:"Ferramenta básica para medições rápidas em casa ou obra.",details:["5m","Compacta","Medição"]}
-];
+  {name:"Parafusadeira Furadeira de Impacto 21V 3/8\" The Black Tools TB-21PZW",cat:"parede",price:131.90,emoji:"🔩",rating:"4,8",desc:"Parafusadeira e furadeira de impacto 21V com torque de até 35 Nm, acessórios e maleta.",details:["21V","35 Nm","2 Baterias","Maleta"],link:"https://meli.la/1u5E2ez"},
 
 const categories = {
   moveis:"Montar móveis e fazer pequenos reparos",
