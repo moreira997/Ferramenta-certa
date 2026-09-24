@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ferramenta Certa: encontre ferramentas por finalidade e orçamento.">
+  <title>Ferramenta Certa — Encontre a ferramenta ideal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Ferramenta <span>Certa</span></div>
+  <div class="tagline">Encontre a ferramenta certa para o que você precisa.</div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="eyebrow">GUIA INTELIGENTE DE COMPRA</div>
+    <h1>Qual ferramenta você realmente precisa?</h1>
+    <p>Escolha o que você pretende fazer e seu orçamento. Nós mostramos as ferramentas que fazem sentido para você.</p>
+    <button class="primary" id="startBtn">Começar agora →</button>
+  </section>
+
+  <section class="category hidden" id="category">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">1º PASSO</div>
+        <h2>O que você quer fazer?</h2>
+      </div>
+      <button class="linkbtn" id="allFromCategory">Ver todas as ferramentas</button>
+    </div>
+
+    <div class="category-grid">
+      <button class="category-card" data-category="moveis">
+        <span class="emoji">🔧</span><strong>Montar móveis e fazer pequenos reparos</strong>
+        <small>Parafusar, montar, ajustar e consertar.</small>
+      </button>
+      <button class="category-card" data-category="parede">
+        <span class="emoji">🧱</span><strong>Furar paredes e instalar coisas</strong>
+        <small>Quadros, prateleiras, suportes e instalações.</small>
+      </button>
+      <button class="category-card" data-category="reforma">
+        <span class="emoji">🏗️</span><strong>Construção e reforma</strong>
+        <small>Serviços mais pesados e variados.</small>
+      </button>
+      <button class="category-card" data-category="profissional">
+        <span class="emoji">🛠️</span><strong>Trabalhar profissionalmente</strong>
+        <small>Ferramentas para uso frequente e trabalho.</small>
+      </button>
+      <button class="category-card wide" data-category="todas">
+        <span class="emoji">🛒</span><strong>Ver todas as ferramentas</strong>
+        <small>Explore o catálogo completo por preço e categoria.</small>
+      </button>
+    </div>
+  </section>
+
+  <section class="budget hidden" id="budget">
+    <button class="back" id="backCategory">← Voltar</button>
+    <div class="eyebrow">2º PASSO</div>
+    <h2>Quanto você pretende gastar?</h2>
+    <p class="muted">Vamos mostrar opções dentro da faixa que você escolher.</p>
+    <div class="budget-grid">
+      <button class="budget-card" data-budget="150">Até <strong>R$ 150</strong></button>
+      <button class="budget-card" data-budget="300">R$ 150 a <strong>R$ 300</strong></button>
+      <button class="budget-card" data-budget="600">R$ 300 a <strong>R$ 600</strong></button>
+      <button class="budget-card" data-budget="1000">Mais de <strong>R$ 600</strong></button>
+    </div>
+  </section>
+
+  <section class="catalog hidden" id="catalog">
+    <div class="catalog-head">
+      <button class="back" id="backHome">← Voltar</button>
+      <div>
+        <div class="eyebrow">FERRAMENTAS ENCONTRADAS</div>
+        <h2 id="catalogTitle">Ferramentas para você</h2>
+        <p class="muted" id="catalogSubtitle"></p>
+      </div>
+    </div>
+    <div class="filters">
+      <span id="count"></span>
+      <button class="filter" id="sortBtn">Ordenar: recomendados ▾</button>
+    </div>
+    <div class="products" id="products"></div>
+  </section>
+</main>
+
+<footer>Ferramenta Certa © 2026 · Projeto em construção</footer>
+<script src="script.js"></script>
+</body>
+</html>
