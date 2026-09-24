@@ -1,6 +1,6 @@
 // Teste GitHub + Cloudflare
 const products = [
-  {name:"Parafusadeira/Furadeira 12V — exemplo",cat:"moveis",price:129.90,emoji:"🔩",rating:"4,7",desc:"Compacta para montagem de móveis, parafusos e pequenos reparos.",details:["12V","Bateria","Compacta"]},
+  {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS"},
   {name:"Parafusadeira/Furadeira 20V — exemplo",cat:"moveis",price:249.90,emoji:"🔧",rating:"4,8",desc:"Mais autonomia e força para uso doméstico frequente.",details:["20V","Bateria","Mandril"]},
   {name:"Furadeira de Impacto 650W — exemplo",cat:"parede",price:219.90,emoji:"🧱",rating:"4,8",desc:"Opção versátil para instalações domésticas e furos em alvenaria.",details:["650W","Impacto","127/220V"]},
   {name:"Furadeira de Impacto 750W — exemplo",cat:"parede",price:329.90,emoji:"🧱",rating:"4,9",desc:"Mais potência para quem faz instalações com maior frequência.",details:["750W","Impacto","Mandril"]},
