@@ -26,7 +26,7 @@ const galleryState = {};
 
 function changeImage(index, direction){
   const state = galleryState[index];
-  const img = document.getElementById(product-img-${index});
+  const img = document.getElementById(`product-img-${index}`);
 
   if(!state || !img) return;
 
@@ -104,10 +104,10 @@ function renderProducts(){
         <h3>${p.name}</h3>
         <div class="stars">★ ${p.rating} · avaliações (exemplo)</div>
         <p class="desc">${p.desc}</p>
-        <div class="details">${p.details.map(d=><span class="pill">${d}</span>).join("")}</div>
+        <div class="details">${p.details.map(d=>`<span class="pill">${d}</span>`).join("")}</div>
         <div class="price">${money(p.price)}</div>
         <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
       </div>
     </article>
   `;
-}).join("");
+}).join("");}
