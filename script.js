@@ -83,7 +83,7 @@ function renderProducts(){
         <p class="desc">${p.desc}</p>
         <div class="details">${p.details.map(d=>`<span class="pill">${d}</span>`).join("")}</div>
         <div class="price">${money(p.price)}</div>
-        <a href="#" onclick="return false;">Ver produto →</a>
+      <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
       </div>
     </article>
   `).join("");
