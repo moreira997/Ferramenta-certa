@@ -75,7 +75,7 @@ function renderProducts(){
 
   $("products").innerHTML=list.map(p=>`
     <article class="product">
-     <div class="product-image">${p.image ? <img src="${p.image}" alt="${p.name}"> : p.emoji}</div>
+    <div class="product-image">${p.image ? <img src="${p.image}" alt="${p.name}"> : p.emoji}</div>
       <div class="product-body">
         <div class="product-cat">${categories[p.cat]||"Ferramenta"}</div>
         <h3>${p.name}</h3>
