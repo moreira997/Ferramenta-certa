@@ -2,7 +2,7 @@
 const products = [
   {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS",images:["D_NQ_NP_2X_689062-MLA116547999226_092026-F.webp","simake2.webp","simake3.webp"]},
   {name:"Parafusadeira/Furadeira 20V — exemplo",cat:"moveis",price:249.90,emoji:"🔧",rating:"4,8",desc:"Mais autonomia e força para uso doméstico frequente.",details:["20V","Bateria","Mandril"]},
-  {name:"Furadeira de Impacto 650W — exemplo",cat:"parede",price:219.90,emoji:"🧱",rating:"4,8",desc:"Opção versátil para instalações domésticas e furos em alvenaria.",details:["650W","Impacto","127/220V"]},
+  {name:"Parafusadeira e Furadeira de Impacto 3/8\" WAP K21 ID02 2000 mAh",cat:"parede",price:199.00,emoji:"🔩",rating:"4,8",desc:"Parafusadeira e furadeira de impacto 21V com 2.000 mAh, torque de até 45 Nm, duas velocidades e maleta.",details:["21V","2.000 mAh","45 Nm","Impacto","Maleta"],link:"https://meli.la/2Y9cAbb",images:["wapk211.jpg","wapk212.jpg","wapk213.jpg"]},
   {name:"Furadeira de Impacto 750W — exemplo",cat:"parede",price:329.90,emoji:"🧱",rating:"4,9",desc:"Mais potência para quem faz instalações com maior frequência.",details:["750W","Impacto","Mandril"]},
   {name:"Martelete Perfurador — exemplo",cat:"reforma",price:549.90,emoji:"🏗️",rating:"4,8",desc:"Indicado para trabalhos de reforma que exigem mais força.",details:["Potente","SDS","Reforma"]},
   {name:"Furadeira Profissional — exemplo",cat:"profissional",price:699.90,emoji:"🛠️",rating:"4,9",desc:"Construção mais robusta para uso frequente e profissional.",details:["Robusta","Uso intenso","Garantia"]},
