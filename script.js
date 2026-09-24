@@ -1,3 +1,4 @@
+// Teste GitHub + Cloudflare
 const products = [
   {name:"Parafusadeira/Furadeira 12V — exemplo",cat:"moveis",price:129.90,emoji:"🔩",rating:"4,7",desc:"Compacta para montagem de móveis, parafusos e pequenos reparos.",details:["12V","Bateria","Compacta"]},
   {name:"Parafusadeira/Furadeira 20V — exemplo",cat:"moveis",price:249.90,emoji:"🔧",rating:"4,8",desc:"Mais autonomia e força para uso doméstico frequente.",details:["20V","Bateria","Mandril"]},
