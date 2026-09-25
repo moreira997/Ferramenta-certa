@@ -82,6 +82,65 @@ function matchesBudget(p){
   if(selectedBudget===600)return p.price>300 && p.price<=600;
   return p.price>600;
 }
+function openImageModal(index){
+  const state=galleryState[index];
+
+  if(!state || !state.images.length) return;
+
+  $("modalImage").src=state.images[state.current];
+  $("imageModal").dataset.productIndex=index;
+  $("imageModal").classList.remove("hidden");
+}
+
+function closeImageModal(){
+  $("imageModal").classList.add("hidden");
+}
+
+function changeModalImage(direction){
+  const index=Number($("imageModal").dataset.productIndex);
+  const state=galleryState[index];
+
+  if(!state || !state.images.length) return;
+
+  state.current=(state.current+direction+state.images.length)%state.images.length;
+
+  $("modalImage").src=state.images[state.current];
+
+  const cardImage=$(`product-img-${index}`);
+
+  if(cardImage){
+    cardImage.src=state.images[state.current];
+  }
+}
+
+$("modalClose").onclick=closeImageModal;
+
+$("modalPrev").onclick=()=>changeModalImage(-1);
+
+$("modalNext").onclick=()=>changeModalImage(1);
+
+$("imageModal").onclick=(event)=>{
+  if(event.target===$("imageModal")){
+    closeImageModal();
+  }
+};
+
+document.addEventListener("keydown",(event)=>{
+  if($("imageModal").classList.contains("hidden")) return;
+
+  if(event.key==="Escape"){
+    closeImageModal();
+  }
+
+  if(event.key==="ArrowLeft"){
+    changeModalImage(-1);
+  }
+
+  if(event.key==="ArrowRight"){
+    changeModalImage(1);
+  }
+});
+
 
 function renderProducts(){
   let list=products.filter(p=>(selectedCategory==="todas"||p.cat===selectedCategory||p.cat==="todas")&&matchesBudget(p));
@@ -97,29 +156,34 @@ function renderProducts(){
   }
 
   $("products").innerHTML=list.map((p,index)=>{
-  const images=p.images||[];
-  const firstImage=images[0];
-  galleryState[index]={images:images,current:0};
+    const images=p.images||[];
+    const firstImage=images[0];
 
-  return `
-    <article class="product">
-      <div class="product-image">
-        ${firstImage
-          ? `<button class="image-arrow left" onclick="changeImage(${index},-1)">‹</button>
-             <img id="product-img-${index}" src="${firstImage}" alt="${p.name}">
-             <button class="image-arrow right" onclick="changeImage(${index},1)">›</button>`
-          : p.emoji}
-      </div>
+    galleryState[index]={
+      images:images,
+      current:0
+    };
 
-      <div class="product-body">
-        <div class="product-cat">${categories[p.cat]||"Ferramenta"}</div>
-        <h3>${p.name}</h3>
-        <div class="stars">★ ${p.rating} · avaliações (exemplo)</div>
-        <p class="desc">${p.desc}</p>
-        <div class="details">${p.details.map(d=>`<span class="pill">${d}</span>`).join("")}</div>
-        <div class="price">${money(p.price)}</div>
-        <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
-      </div>
-    </article>
-  `;
-}).join("");}
+    return `
+      <article class="product">
+        <div class="product-image">
+          ${firstImage
+            ? `<button class="image-arrow left" onclick="changeImage(${index},-1)">‹</button>
+               <img id="product-img-${index}" src="${firstImage}" alt="${p.name}" onclick="openImageModal(${index})">
+               <button class="image-arrow right" onclick="changeImage(${index},1)">›</button>`
+            : p.emoji}
+        </div>
+
+        <div class="product-body">
+          <div class="product-cat">${categories[p.cat]||"Ferramenta"}</div>
+          <h3>${p.name}</h3>
+          <div class="stars">★ ${p.rating} · avaliações (exemplo)</div>
+          <p class="desc">${p.desc}</p>
+          <div class="details">${p.details.map(d=>`<span class="pill">${d}</span>`).join("")}</div>
+          <div class="price">${money(p.price)}</div>
+          <a href="${p.link || '#'}" ${p.link ? 'target="_blank" rel="noopener noreferrer"' : 'onclick="return false;"'}>Ver produto no Mercado Livre →</a>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
