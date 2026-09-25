@@ -1,5 +1,17 @@
 // Teste GitHub + Cloudflare
 const products = [
+
+  {name:"Jogo de Chave Biela 8-19mm CRV 12 Peças Gedore Red R01802012",cat:"moveis",price:303.99,emoji:"🔧",rating:"4,9",desc:"Jogo de chaves biela Gedore Red com 12 peças para montagem, manutenção e pequenos reparos.",details:["12 Peças","CRV","8–19mm","Gedore Red"],link:"https://meli.la/13XoEVa",images:["Q1.jpg","Q2.jpg","Q3.jpg","Q4.jpg"]},
+
+  {name:"Jogo de Chaves Combinadas Gedore Robust 06-32mm 25 Peças",cat:"moveis",price:395.89,emoji:"🔧",rating:"4,9",desc:"Jogo completo de chaves combinadas Gedore Robust para montagem, manutenção e diversos reparos.",details:["25 Peças","6–32mm","Gedore Robust","Combinadas"],link:"https://meli.la/2X9P7JX",images:["Q5.jpg","Q6.jpg","Q7.jpg","Q8.jpg"]},
+
+  {name:"Jogo de Ferramentas Vonder com 110 Peças",cat:"moveis",price:499.90,emoji:"🧰",rating:"4,9",desc:"Jogo de ferramentas Vonder com 110 peças para montagem de móveis, manutenção e pequenos reparos.",details:["110 Peças","Vonder","Maleta","Kit completo"],link:"https://meli.la/132AZTM",images:["Q9.jpg","Q10.jpg","Q11.jpg","Q12.jpg"]},
+
+  {name:"Jogo de Soquete 57 Peças 1/4 Stels 1410155",cat:"moveis",price:467.90,emoji:"🧰",rating:"4,9",desc:"Jogo de soquetes Stels com 57 peças e catraca para manutenção, montagem e reparos.",details:["57 Peças","1/4","Catraca","Stels"],link:"https://meli.la/2Csb4EW",images:["Q13.jpg","Q14.jpg","Q15.jpg","Q16.jpg"]},
+
+  {name:"Jogo Multiferramentas Stanley STMT81243-840 110 Peças",cat:"moveis",price:548.00,emoji:"🧰",rating:"4,9",desc:"Kit multiferramentas Stanley com 110 peças e maleta para montagem, manutenção e pequenos reparos.",details:["110 Peças","Stanley","Maleta","Multiferramentas"],link:"https://meli.la/1dJMZqn",images:["Q17.jpg","Q18.jpg","Q19.jpg","Q20.jpg"]},
+
+  {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS",images:["D_NQ_NP_2X_689062-MLA116547999226_092026-F.webp","simake2.webp","simake3.webp"]},
   {name:"Parafusadeira Furadeira Simake — 2 Baterias + Maleta",cat:"parede",price:119.99,emoji:"🔩",rating:"4,7",desc:"Kit com duas baterias e maleta para facilitar furos e instalações.",details:["2 Baterias","Maleta","Parafusadeira/Furadeira"],link:"https://meli.la/13xpyFS",images:["D_NQ_NP_2X_689062-MLA116547999226_092026-F.webp","simake2.webp","simake3.webp"]},
   {name:"Jogo Chaves Combinadas Gedore Robust S09105012 06-22mm 12 Peças Cromado",cat:"moveis",price:154.59,emoji:"🔧",rating:"4,9",desc:"Jogo de chaves combinadas Gedore Robust com 12 peças, medidas de 6 a 22 mm.",details:["12 Peças","6–22mm","Cromado","Gedore Robust"],link:"https://meli.la/1xtajAs",images:["Zx16.jpg","Zx17.jpg","Zx18.jpg"]},
   {name:"Jogo Kit de Ferramentas Manuais Chave Catraca 1/2 8 a 32mm Cromo Vanádio BCS022L The Black Tools",cat:"moveis",price:159.90,emoji:"🔧",rating:"4,7",desc:"Jogo de ferramentas manuais com chave catraca 1/2 e medidas de 8 a 32 mm.",details:["Catraca 1/2","8–32mm","Cromo Vanádio"],link:"https://meli.la/1AoqjdJ",images:["zx19.jpg","zx20.jpg","zx21.jpg"]},
